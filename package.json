@@ -1,0 +1,42 @@
+{
+  "name": "@stdlib/blas-base-dnrm2",
+  "version": "0.0.0",
+  "description": "Calculate the L2-norm of a double-precision floating-point vector.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./index.mjs",
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/blas-base-dnrm2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "keywords": [
+    "stdlib",
+    "stdmath",
+    "mathematics",
+    "math",
+    "blas",
+    "level 1",
+    "dnrm2",
+    "nrm2",
+    "euclidean",
+    "magnitude",
+    "2-norm",
+    "l2-norm",
+    "norm",
+    "distance",
+    "length",
+    "vector",
+    "array",
+    "float64",
+    "double",
+    "float64array"
+  ],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/athan"
+  }
+}
