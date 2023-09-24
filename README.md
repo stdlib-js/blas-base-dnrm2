@@ -59,6 +59,11 @@ The [L2-norm][l2-norm] is defined as
 ## Usage
 
 ```javascript
+import dnrm2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-dnrm2@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/blas-base-dnrm2/tags). For example,
+
+```javascript
 import dnrm2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-dnrm2@v0.1.0-esm/index.mjs';
 ```
 
@@ -174,7 +179,7 @@ var z = dnrm2.ndarray( N, x, 2, 1 );
 import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@esm/index.mjs';
 import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@esm/index.mjs';
 import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import dnrm2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-dnrm2@v0.1.0-esm/index.mjs';
+import dnrm2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-dnrm2@esm/index.mjs';
 
 var x;
 var i;
