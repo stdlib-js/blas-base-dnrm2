@@ -52,38 +52,30 @@ The [L2-norm][l2-norm] is defined as
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-base-dnrm2
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-dnrm2 = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-dnrm2@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var dnrm2 = require( 'path/to/vendor/umd/blas-base-dnrm2/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-dnrm2@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.dnrm2;
-})();
-</script>
+var dnrm2 = require( '@stdlib/blas-base-dnrm2' );
 ```
 
 #### dnrm2( N, x, stride )
@@ -94,9 +86,8 @@ Computes the [L2-norm][l2-norm] of a double-precision floating-point vector `x`.
 var Float64Array = require( '@stdlib/array-float64' );
 
 var x = new Float64Array( [ 1.0, -2.0, 2.0 ] );
-var N = 3;
 
-var z = dnrm2( N, x, 1 );
+var z = dnrm2( 3, x, 1 );
 // returns 3.0
 ```
 
@@ -110,12 +101,10 @@ The `N` and `stride` parameters determine which elements in `x` are accessed at 
 
 ```javascript
 var Float64Array = require( '@stdlib/array-float64' );
-var floor = require( '@stdlib/math-base-special-floor' );
 
 var x = new Float64Array( [ 1.0, 2.0, 2.0, -7.0, -2.0, 3.0, 4.0, 2.0 ] );
-var N = floor( x.length / 2 );
 
-var z = dnrm2( N, x, 2 );
+var z = dnrm2( 4, x, 2 );
 // returns 5.0
 ```
 
@@ -129,9 +118,7 @@ var Float64Array = require( '@stdlib/array-float64' );
 var x0 = new Float64Array( [ 2.0, 1.0, 2.0, -2.0, -2.0, 2.0, 3.0, 4.0 ] );
 var x1 = new Float64Array( x0.buffer, x0.BYTES_PER_ELEMENT*1 ); // start at 2nd element
 
-var N = 4;
-
-var z = dnrm2( N, x1, 2 );
+var z = dnrm2( 4, x1, 2 );
 // returns 5.0
 ```
 
@@ -145,9 +132,8 @@ Computes the [L2-norm][l2-norm] of a double-precision floating-point vector usin
 var Float64Array = require( '@stdlib/array-float64' );
 
 var x = new Float64Array( [ 1.0, -2.0, 2.0 ] );
-var N = 3;
 
-var z = dnrm2.ndarray( N, x, 1, 0 );
+var z = dnrm2.ndarray( 3, x, 1, 0 );
 // returns 3.0
 ```
 
@@ -155,16 +141,14 @@ The function has the following additional parameters:
 
 -   **offset**: starting index for `x`.
 
-While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying `buffer`, the `offset` parameter supports indexing semantics based on a starting index. For example, to calculate the [L2-norm][l2-norm] for every other value in `x` starting from the second value
+While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying buffer, the `offset` parameter supports indexing semantics based on a starting index. For example, to calculate the [L2-norm][l2-norm] for every other value in `x` starting from the second value
 
 ```javascript
 var Float64Array = require( '@stdlib/array-float64' );
-var floor = require( '@stdlib/math-base-special-floor' );
 
 var x = new Float64Array( [ 2.0, 1.0, 2.0, -2.0, -2.0, 2.0, 3.0, 4.0 ] );
-var N = floor( x.length / 2 );
 
-var z = dnrm2.ndarray( N, x, 2, 1 );
+var z = dnrm2.ndarray( 4, x, 2, 1 );
 // returns 5.0
 ```
 
@@ -189,33 +173,16 @@ var z = dnrm2.ndarray( N, x, 2, 1 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-base-dnrm2@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
+var filledarrayBy = require( '@stdlib/array-filled-by' );
+var dnrm2 = require( '@stdlib/blas-base-dnrm2' );
 
-var x;
-var i;
-
-x = new Float64Array( 10 );
-for ( i = 0; i < x.length; i++ ) {
-    x[ i ] = round( randu()*100.0 );
-}
+var x = filledarrayBy( 10, 'float64', discreteUniform( -100, 100 ) );
 console.log( x );
 
-var z = dnrm2( x.length, x, 1 );
-console.log( z );
-
-})();
-</script>
-</body>
-</html>
+var out = dnrm2( x.length, x, 1 );
+console.log( out );
 ```
 
 </section>
@@ -312,15 +279,15 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 [dnrm2]: http://www.netlib.org/lapack/explore-html/de/da4/group__double__blas__level1.html
 
-[@stdlib/array/float64]: https://github.com/stdlib-js/array-float64/tree/umd
+[@stdlib/array/float64]: https://github.com/stdlib-js/array-float64
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
 <!-- <related-links> -->
 
-[@stdlib/blas/base/gnrm2]: https://github.com/stdlib-js/blas-base-gnrm2/tree/umd
+[@stdlib/blas/base/gnrm2]: https://github.com/stdlib-js/blas-base-gnrm2
 
-[@stdlib/blas/base/snrm2]: https://github.com/stdlib-js/blas-base-snrm2/tree/umd
+[@stdlib/blas/base/snrm2]: https://github.com/stdlib-js/blas-base-snrm2
 
 <!-- </related-links> -->
 
