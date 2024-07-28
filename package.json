@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/blas-base-dnrm2",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Calculate the L2-norm of a double-precision floating-point vector.",
   "license": "Apache-2.0",
   "author": {
@@ -44,7 +44,7 @@
     "@stdlib/assert-is-error": "^0.2.2",
     "@stdlib/blas-base-shared": "^0.1.0",
     "@stdlib/math-base-special-abs": "^0.2.2",
-    "@stdlib/math-base-special-pow": "^0.2.1",
+    "@stdlib/math-base-special-pow": "^0.3.0",
     "@stdlib/math-base-special-sqrt": "^0.2.2",
     "@stdlib/napi-argv": "^0.2.2",
     "@stdlib/napi-argv-int64": "^0.2.2",
