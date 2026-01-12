@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-12-05)
+## Unreleased (2026-01-12)
 
 <section class="features">
 
@@ -22,6 +22,8 @@
 
 <details>
 
+-   [`4026f6b`](https://github.com/stdlib-js/stdlib/commit/4026f6b885a77192ae147c6314c691db8d375f26) - **docs:** add references _(by Athan Reines)_
+-   [`2035f34`](https://github.com/stdlib-js/stdlib/commit/2035f344a1a469278042b7532f034dc6119933b3) - **docs:** add function documentation _(by Athan Reines)_
 -   [`172a0b9`](https://github.com/stdlib-js/stdlib/commit/172a0b9697fd21193a8b638c02f1d0774db8f6a3) - **bench:** refactor to use dynamic memory allocation in `blas/base/dnrm2` [(#8813)](https://github.com/stdlib-js/stdlib/pull/8813) _(by Krishna Awasthi)_
 -   [`11f3cfa`](https://github.com/stdlib-js/stdlib/commit/11f3cfa5a658d7cb105aeb2578b7d72ea62f1e97) - **refactor:** update include header guards for double precision real packages [(#7711)](https://github.com/stdlib-js/stdlib/pull/7711) _(by Shabareesh Shetty)_
 -   [`4dba421`](https://github.com/stdlib-js/stdlib/commit/4dba421f5bd8acafdd58e1c7681965b9ad267bc7) - **docs:** minor clean-up _(by Philipp Burckhardt)_
