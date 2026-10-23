@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-09-07)
+## Unreleased (2026-10-23)
 
 <section class="commits">
 
@@ -12,6 +12,7 @@
 
 <details>
 
+-   [`444fdd5`](https://github.com/stdlib-js/stdlib/commit/444fdd5f6c5cfb2dbd1fa2b69609a9349b20224d) - **test:** migrate `blas/base/dnrm2` to ULP-based assertions [(#16291)](https://github.com/stdlib-js/stdlib/pull/16291) _(by Athan Reines)_
 -   [`9108058`](https://github.com/stdlib-js/stdlib/commit/9108058ec47102a250344cb84df5e8de2a40435b) - **bench:** refactor to use string interpolation in `blas/base/dnrm2` [(#10408)](https://github.com/stdlib-js/stdlib/pull/10408) _(by Shubham)_
 
 </details>
@@ -24,8 +25,9 @@
 
 ### Contributors
 
-A total of 1 person contributed to this release. Thank you to this contributor:
+A total of 2 people contributed to this release. Thank you to the following contributors:
 
+-   Athan Reines
 -   Shubham
 
 </section>
